@@ -1,14 +1,18 @@
 @font-face {
-  font-family: 'Boska-Variable';
-  src: url('../fonts/Boska-Variable.woff2') format('woff2');
-  font-weight: 200 900;
+  font-family: 'Zodiak-Variable';
+  src: url('../fonts/Zodiak-Variable.woff2') format('woff2'),
+       url('../fonts/Zodiak-Variable.woff') format('woff'),
+       url('../fonts/Zodiak-Variable.ttf') format('truetype');
+  font-weight: 100 900;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Boska-VariableItalic';
-  src: url('../fonts/Boska-VariableItalic.woff2') format('woff2');
-  font-weight: 200 900;
+  font-family: 'Zodiak-VariableItalic';
+  src: url('../fonts/Zodiak-VariableItalic.woff2') format('woff2'),
+       url('../fonts/Zodiak-VariableItalic.woff') format('woff'),
+       url('../fonts/Zodiak-VariableItalic.ttf') format('truetype');
+  font-weight: 100 900;
   font-display: swap;
   font-style: italic;
 }
@@ -31,18 +35,21 @@
   font-style: italic;
 }
 @font-face {
-  font-family: 'ClashDisplay-Bold';
-  src: url('../fonts/ClashDisplay-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
   font-family: 'ClashDisplay-Variable';
   src: url('../fonts/ClashDisplay-Variable.woff2') format('woff2');
   font-weight: 200 700;
   font-display: swap;
   font-style: normal;
+}
+@property --angle-background{
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 140deg;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 :root{
   --color-primary: hsl(31, 73%, 10%);
@@ -50,12 +57,12 @@
   --color-primary3: hsl(27, 53%, 7%);
   --color-secondary:  hsl(60, 3%, 15%);
   --color-secondary2: hsl(33, 65%, 47%);
-  --color-secondary3: hsl(43, 71%, 69%);
+  --color-brand: hsl(43, 71%, 69%);
 }
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html{
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 body{
   width: 100%;
@@ -89,30 +96,39 @@ a{
   outline: 1px solid var(--color-primary2);
 }
 header{
-  width: 100%;
-  height: auto;
-  background-color: var(--color-primary3);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 1rem 1.25rem;
   font-size: 1rem;
-  padding: 1rem 2rem;
+  background-color: var(--color-primary3);
 }
 .brand{
+  gap: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  padding: 0.25rem 0.25rem;
+  transition: transform 0.3s ease;
+}
+.brand:focus{
+  border-radius: 2px;
+  outline: 1px solid var(--color-brand);
+}
+.brand:hover{
+  transform: scale(1.05) translateY(-1px);
 }
 .brand-logo{
   width: 1.25rem;
   height: auto;
 }
 .brand-name{
-  color: var(--color-secondary3);
-  font-weight: 600;
+  color: var(--color-brand);
+  font-weight: 800;
   font-size: 1.25rem;
-  font-family: 'ClashDisplay-Variable', sans-serif;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
 }
 nav{
   display: flex;
@@ -120,15 +136,108 @@ nav{
   align-items: center;
 }
 nav > ul{
+  gap: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
   font-weight: 700;
-  font-family: 'PlusJakartaSans-Variable', sans-serif;
   font-size: 0.875rem;
-  gap: 1rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+}
+li{
+  transition: transform 0.3s ease;
 }
 li > a{
+  padding: 0.125rem 0.125rem;
+  border-radius: 2px;
   color: hsl(44, 37%, 67%);
+}
+li > a:focus{
+  outline: 1px solid hsl(44, 37%, 67%);
+}
+li:hover{
+  transform: scale(1.05) translateY(-1px);
+}
+#main-content{
+  width: 100%;
+  height: auto;
+}
+#hero{
+  width: 100%;
+  height: auto;
+  padding: 3rem 0;
+  background: repeating-linear-gradient(135deg, hsl(30, 73%, 11%) 47.5%, hsl(30, 73%, 11%) 50%, var(--color-primary) 50%, var(--color-primary) 97.5%);
+  background-position: 0 0;
+  background-size: 50px 50px;
+  animation-name: moveBackground;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.hero-address{
+  color: hsl(35, 43%, 44%);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+.hero-title{
+  margin: 0.75rem 0;
+  color: hsl(43, 73%, 86%);
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'ClashDisplay-Variable', sans-serif;
+  text-align: center;
+}
+.hero-description{
+  color: hsl(30, 25%, 50%);
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+  text-align: center;
+}
+.hero-cta-container{
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0 0 0;
+}
+.hero-cta-menu{
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  color: hsl(34, 73%, 91%);
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+  background-color: var(--color-secondary2);
+  transition: transform 0.3s ease;
+}
+.hero-cta-menu:hover{
+  transform: scale(1.05) translateY(-1px);
+}
+.hero-cta-about{
+  padding: 0.75rem 1.5rem;
+  border: 1px solid hsl(32, 44%, 33%);
+  border-radius: 4px;
+  color: hsl(34, 73%, 91%);
+  color: hsl(39, 41%, 57%);
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+  transition: transform 0.3s ease;
+}
+.hero-cta-about:hover{
+  transform: scale(1.05) translateY(-1px);
+}
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 300px;
+  }
 }
