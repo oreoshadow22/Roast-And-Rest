@@ -126,11 +126,12 @@ header{
   font-family: 'PlusJakartaSans-Variable', sans-serif;
 }
 nav{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-nav > ul{
+#nav-list{
   gap: 1rem;
   display: flex;
   justify-content: center;
@@ -152,18 +153,22 @@ li > a:focus{
   height: auto;
 }
 #hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: auto;
   padding: 3rem 0;
-  background: repeating-linear-gradient(135deg, hsl(30, 73%, 11%) 47.5%, hsl(30, 73%, 11%) 50%, var(--color-primary) 50%, var(--color-primary) 97.5%);
+  background: repeating-linear-gradient(135deg, hsl(30, 73%, 13%) 47.5%, hsl(30, 73%, 13%) 50%, var(--color-primary) 50%, var(--color-primary) 97.5%);
   background-position: 0 0;
   background-size: 50px 50px;
   animation-name: moveBackground;
   animation-duration: 3s;
-  animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 .hero-address{
+  width: 90%;
   color: hsl(35, 43%, 44%);
   font-style: normal;
   font-weight: 600;
@@ -173,6 +178,7 @@ li > a:focus{
   text-transform: uppercase;
 }
 .hero-title{
+  width: 90%;
   margin: 0.75rem 0;
   color: hsl(43, 73%, 86%);
   font-weight: 700;
@@ -181,6 +187,7 @@ li > a:focus{
   text-align: center;
 }
 .hero-description{
+  width: 90%;
   color: hsl(30, 25%, 50%);
   font-weight: 600;
   font-size: 0.75rem;
@@ -192,6 +199,7 @@ li > a:focus{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
   margin: 1.5rem 0 0 0;
 }
 .hero-cta-menu{
@@ -199,7 +207,7 @@ li > a:focus{
   border-radius: 4px;
   color: hsl(34, 73%, 91%);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-family: 'PlusJakartaSans-Variable', sans-serif;
   background-color: var(--color-secondary2);
 }
@@ -207,10 +215,9 @@ li > a:focus{
   padding: 0.75rem 1.5rem;
   border: 1px solid hsl(32, 44%, 33%);
   border-radius: 4px;
-  color: hsl(34, 73%, 91%);
   color: hsl(39, 41%, 57%);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-family: 'PlusJakartaSans-Variable', sans-serif;
 }
 @keyframes moveBackground {
