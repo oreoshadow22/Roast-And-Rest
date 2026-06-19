@@ -59,6 +59,7 @@ html{
 body{
   width: 100%;
   height: 100vh;
+  cursor: pointer;
   background-color: var(--color-primary);
 }
 a{
@@ -294,7 +295,7 @@ li > a:focus{
 #menu{
   width: 100%;
   height: auto;
-  padding: 1.5rem 2rem;
+  padding: 3rem 2rem;
   background-color: var(--color-secondary);
   background-position: 0 0;
   animation-name: slide-down-in-background;
@@ -330,7 +331,7 @@ li > a:focus{
   animation-fill-mode: both;
 }
 #menu-list{
-  gap: 2rem;
+  gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
   display: grid;
@@ -403,6 +404,24 @@ li > a:focus{
   text-align: center;
   animation-name: slide-fade-in;
   animation-duration: 0.75s;
+  animation-timing-function: ease;
+  animation-delay: 1.15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.menu-more{
+  appearance: none;
+  width: 100%;
+  margin-top: 2rem;
+  border: 0;
+  color: hsl(33, 65%, 47%);
+  font-weight: 800;
+  font-size: 1rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+  text-align: center;
+  background: 0;
+  animation-name: slide-fade-in;
+  animation-duration: 0.85s;
   animation-timing-function: ease;
   animation-delay: 1.15s;
   animation-iteration-count: 1;
