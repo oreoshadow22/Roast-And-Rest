@@ -63,6 +63,7 @@ body{
   background-color: var(--color-primary);
 }
 a{
+  color: inherit;
   text-decoration: none;
 }
 #skip-to-content {
@@ -306,10 +307,10 @@ li > a:focus{
   animation-fill-mode: both;
 }
 #menu > h2{
-  padding-bottom: 0.35rem;
+  margin-bottom: 0.35rem;
   color: hsl(50, 9%, 74%);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-family: 'PlusJakartaSans-Variable', sans-serif;
   animation-name: slide-fade-in;
   animation-duration: 0.75s;
@@ -319,8 +320,9 @@ li > a:focus{
   animation-fill-mode: both;
 }
 #menu > p{
+  margin-bottom: 2rem;
   color: hsl(48, 17%, 95%);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.75rem;
   font-family: 'ClashDisplay-Variable', sans-serif;
   animation-name: slide-fade-in;
@@ -331,7 +333,7 @@ li > a:focus{
   animation-fill-mode: both;
 }
 #menu-list{
-  gap: 1rem;
+  gap: 0.875rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
   display: grid;
@@ -426,6 +428,75 @@ li > a:focus{
   animation-delay: 1.15s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
+}
+/*ABOUT*/
+#about{
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  display: grid;
+  padding: 2rem 0;
+  border-top: 1px solid hsl(60, 3%, 28%);
+  background-color: hsl(60, 2%, 18%);
+}
+.about-description-card{
+  width: 80%;
+}
+.about-description-card > h2{
+  margin-bottom: 0.35rem;
+  color: hsl(49, 7%, 67%);
+  font-weight: 600;
+  font-size: 1.15rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+}
+.about-description-card h3{
+  margin-bottom: 1.15rem;
+  color: hsl(48, 22%, 95%);
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: 'ClashDisplay-Variable', sans-serif;
+}
+.about-description-card > p{
+  margin-bottom: 1.5rem;
+  color: hsl(49, 7%, 72%);
+  font-weight: 550;
+  font-size: 1rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+}
+.about-description-card > .detail{
+  box-sizing: border-box;
+  width: 60%;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.75rem;
+  color: hsl(27, 62%, 33%);
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+  text-align: center;
+  background-color: hsl(34, 51%, 92%);
+}
+.about-img-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: auto;
+}
+.img-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  border-radius: 1rem;
+  background-color: hsl(40, 55%, 87%);
+}
+.img-card > span{
+  color: hsl(35, 43%, 44%);
+  font-weight: 800;
+  font-family: 'PlusJakartaSans-Variable', sans-serif;
+  text-align: center;
 }
 /*ANIMATIONS-KEYFRAMES*/
 @keyframes slide-fade-in-header{
